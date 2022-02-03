@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 
 const DB_URL =
   "mongodb+srv://admin:admin@cluster0.n8ska.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const PORT = 3334;
+const port = process.env.PORT || 3334;
 
 const db_config = {
   useNewUrlParser: true,
@@ -31,6 +31,6 @@ mongoose
   });
 
 //INIT Server
-app.listen(PORT, ()=> {
-    console.log(`Server is running at port ${PORT}`);
+app.listen(port, ()=> {
+    console.log(`Server is running at port ${port}`);
 });
